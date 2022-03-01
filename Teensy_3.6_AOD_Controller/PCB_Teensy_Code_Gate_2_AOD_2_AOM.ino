@@ -26,7 +26,7 @@
   pinMode(14, OUTPUT);
   pinMode(2, OUTPUT);
   pinMode(47, OUTPUT);
-  //recieving AOD
+  //receiving AOD
   pinMode(9, OUTPUT);
   pinMode(10, OUTPUT);
   pinMode(11, OUTPUT);
@@ -72,7 +72,7 @@ void loop() {
   digitalWriteFast(14, HIGH);
   digitalWriteFast(2, HIGH);
   digitalWriteFast(47, HIGH);
-  //recieving AOD
+  //receiving AOD
   digitalWriteFast(9, HIGH);
   digitalWriteFast(10, HIGH);
   digitalWriteFast(11, HIGH);
@@ -116,7 +116,7 @@ void loop() {
   digitalWriteFast(14, LOW);
   digitalWriteFast(2, LOW);
   digitalWriteFast(47, LOW);
-  //recieving AOD
+  //receiving AOD
   digitalWriteFast(9, LOW);
   digitalWriteFast(10, LOW);
   digitalWriteFast(11, LOW);

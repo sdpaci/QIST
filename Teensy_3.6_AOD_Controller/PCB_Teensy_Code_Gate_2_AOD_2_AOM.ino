@@ -1,5 +1,12 @@
+/*
+ * PCB_Teensy_Code_Gate_2_AOD_2_AOM.ino
+ * 
+ * Created: 3/11/2021
+ * Author: Steven Paci Jr.
+ */
  void setup() {
   // put your setup code here, to run once:
+  //Set digital I/O Pins being used to Outputs
   //transmitting AOD
   pinMode(29, OUTPUT);
   pinMode(30, OUTPUT);
@@ -45,6 +52,7 @@
 
 void loop() {
   // put your main code here, to run repeatedly:
+  //Write pins high
   //transmitting AOD
   digitalWriteFast(29, HIGH);
   digitalWriteFast(30, HIGH);
@@ -83,11 +91,12 @@ void loop() {
   digitalWriteFast(53, HIGH);
   digitalWriteFast(54, HIGH);
   digitalWriteFast(55, HIGH);
-    //SMA pins
+  //SMA pins
   digitalWriteFast(26, HIGH);
   digitalWriteFast(27, HIGH);
-  delayMicroseconds(10);
+  delayMicroseconds(10); //delay for 10 us
 
+  //Write pins low
   //transmitting AOD
   digitalWriteFast(29, LOW);
   digitalWriteFast(30, LOW);
@@ -107,7 +116,7 @@ void loop() {
   digitalWriteFast(14, LOW);
   digitalWriteFast(2, LOW);
   digitalWriteFast(47, LOW);
-    //recieving AOD
+  //recieving AOD
   digitalWriteFast(9, LOW);
   digitalWriteFast(10, LOW);
   digitalWriteFast(11, LOW);
@@ -129,5 +138,5 @@ void loop() {
   //SMA pins
   digitalWriteFast(26, LOW);
   digitalWriteFast(27, LOW);
-  delayMicroseconds(90);
+  delayMicroseconds(90); //delay for 90 us
 }

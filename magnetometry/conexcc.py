@@ -232,20 +232,40 @@ if __name__ == '__main__':
     conex_cc_2.driver.RS(DEV,'')
     conex_cc_1.read_controller_state()
     conex_cc_2.read_controller_state()
+    print('FIRST READY PROCEDURE:')
     ready_1 = conex_cc_1.wait_for_ready(timeout=60)
     ready_2 = conex_cc_2.wait_for_ready(timeout=60)
+    conex_cc_1.read_controller_state()
+    conex_cc_2.read_controller_state()
+    
+    print('SECOND READY PROCEDURE:')
+    ready_1 = conex_cc_1.wait_for_ready(timeout=60)
+    ready_2 = conex_cc_2.wait_for_ready(timeout=60)
+    conex_cc_1.read_controller_state()
+    conex_cc_2.read_controller_state()
+    
     a=0
     if ready_1 and ready_2:
         while (ready_1 and ready_2 and a < 5):
             if (a % 2):
+                conex_cc_1.read_controller_state()
                 conex_cc_1.move_relative(45)
+                conex_cc_1.read_controller_state()
+                conex_cc_2.read_controller_state()
                 conex_cc_2.move_relative(45)
+                conex_cc_2.read_controller_state()
+                sleep(0.5)
             else:
+                conex_cc_1.read_controller_state()
                 conex_cc_1.move_relative(-45)
+                conex_cc_1.read_controller_state()
+                conex_cc_2.read_controller_state()
                 conex_cc_2.move_relative(-45)
+                conex_cc_2.read_controller_state()
+                sleep(0.5)
             ready_1 = conex_cc_1.wait_for_ready(timeout=60)
             ready_2 = conex_cc_2.wait_for_ready(timeout=60)
-            sleep(2)
+            # sleep(5)
             a += 1
         conex_cc_1.close()
         conex_cc_2.close()
